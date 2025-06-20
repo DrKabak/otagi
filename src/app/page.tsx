@@ -8,3 +8,12 @@ export default function Home() {
     </main>
   );
 }
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Otagi Projesi - Güncelleme Testi</h1>
+      {/* Bu satır sadece görünür küçük bir değişiklik için eklendi */}
+    </div>
+  );
+}
