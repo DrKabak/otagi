@@ -1,22 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "sqlite"
-  url   = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
+  id       Int       @id @default(autoincrement())
   name     String
-  email    String   @unique
+  email    String    @unique
   password String
-  role     String   @default("user")
-  messages Message[]
+  role     String    @default("user")
+  messages Message[] @relation("UserMessages")
+  bio      String?
 }
 
 model AnimeRoom {
   id          Int       @id @default(autoincrement())
   title       String
   description String
-  messages    Message[]
+  messages    Message[] @relation("RoomMessages")
   createdAt   DateTime  @default(now())
 }
 
@@ -24,8 +29,8 @@ model Message {
   id        Int       @id @default(autoincrement())
   content   String
   createdAt DateTime  @default(now())
-  user      User      @relation(fields: [userId], references: [id])
+  user      User      @relation("UserMessages", fields: [userId], references: [id])
   userId    Int
-  room      AnimeRoom @relation(fields: [roomId], references: [id])
+  room      AnimeRoom @relation("RoomMessages", fields: [roomId], references: [id])
   roomId    Int
 }

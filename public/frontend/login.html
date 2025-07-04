@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Otagi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Başlık Kısmı -->
+    <header>
+      <div class="header-left">
+        <button class="menu-button" aria-label="Menüyü aç/kapat">&#9776;</button>
+      </div>
+
+      <div class="header-center">
+        <img src="otagi-logo.png" alt="Otagi Logo" class="logo" />
+        <h1 class="site-adi">Otagi</h1>
+      </div>
+
+      <div class="header-right">
+        <div class="giris-dropdown">
+          <button>Giriş Yap</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Açılır Menü -->
+    <nav class="menu">
+      <ul>
+        <li><a href="tum-forumlar.html">Tüm Forumlar</a></li>
+        <li><a href="anime.html">Anime</a></li>
+        <li><a href="manga.html">Manga</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      </ul>
+    </nav>
+
+    <!-- Menü Overlay Kısmı -->
+    <div class="overlay hidden"></div>
+
+    <!-- ANA YAZI VE ARAMA -->
+
+    <main>
+       <main class="auth-main">
+    <section class="auth-container">
+      <h2>Giriş Yap</h2>
+      <form id="loginForm">
+        <label for="email">E-posta:</label>
+        <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required />
+        
+        <label for="password">Şifre:</label>
+        <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required />
+        
+        <button type="submit">Giriş Yap</button>
+      </form>
+      <p>Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></p>
+    </section>
+  </main>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Otagi. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
+
